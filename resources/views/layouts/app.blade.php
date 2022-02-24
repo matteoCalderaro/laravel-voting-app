@@ -17,7 +17,8 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans bg-gray-background text-gray-900 text-sm">
-        <header class="flex items-center justify-between px-8 py-4">
+
+        <header class="flex items-center justify-between px-8 py-4"> {{-- navbar --}}
             <a href="#"><img src="{{ asset('img/logo.svg')}}" alt=""></a>
             <div class="flex items-center">
                 @if (Route::has('login'))
@@ -47,6 +48,7 @@
                 </a>
             </div>
         </header>
+
         <main class="container mx-auto max-w-custom flex">
             <div class="w-70 mr-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nemo maiores eum consectetur quibusdam, laudantium ex obcaecati doloribus odio non reprehenderit at maxime aperiam officia, voluptates nihil numquam ipsum adipisci!
@@ -67,10 +69,10 @@
                         <li><a href="" class="text-gray-400 transition duration-150 ease-in border-b-4
                         pb-3 hover:border-blue">Closed (55)</a></li>
                     </ul>
-                </nav>
+                </nav> {{-- tabs --}}
 
                 <div class="mt-8">
-                    {{ $slot }}
+                    {{ $slot }} {{-- index.blade (filters)--}}
                 </div>
             </div>
         </main>
