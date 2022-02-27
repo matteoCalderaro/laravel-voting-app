@@ -46,6 +46,7 @@ module.exports = {
             fontSize: {
                 xxs: ['0.625rem',{ lineHeight: '1rem'}]
             }
+
         },
     },
 
