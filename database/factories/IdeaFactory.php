@@ -20,7 +20,7 @@ class IdeaFactory extends Factory
         return [
             'user_id' => User::factory(),
             'title' => ucwords($this->faker->words(4, true)),
-            'description' => $this->faker->paragraph(3),
+            'description' => $this->faker->paragraph(2),
         ];
     }
 }
