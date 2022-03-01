@@ -15,6 +15,7 @@ class Idea extends Model
 
     protected $guarded = [];
 
+
     public function sluggable(): array
     {
         return [
@@ -30,6 +31,21 @@ class Idea extends Model
 
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+
+    public function status(){
+        return $this->belongsTo(Status::class);
+    }
+
+    public function getStatusClasses()
+    {
+
+        if($this->status->name === 'Implemented'){
+            return 'bg-blue';
+        } else if($this->status->name === 'Open'){
+            return 'bg-purple';
+        }
+        return 'bg-gray-200';
     }
 
 }
