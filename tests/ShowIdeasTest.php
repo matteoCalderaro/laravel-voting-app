@@ -49,6 +49,4 @@ class ShowIdeasTest extends TestCase
         $response->assertSee($idea->title);
         $response->assertSee($idea->description);
     }
-
-
 }

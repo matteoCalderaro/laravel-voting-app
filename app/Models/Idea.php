@@ -37,15 +37,4 @@ class Idea extends Model
         return $this->belongsTo(Status::class);
     }
 
-    public function getStatusClasses()
-    {
-
-        if($this->status->name === 'Implemented'){
-            return 'bg-blue';
-        } else if($this->status->name === 'Open'){
-            return 'bg-purple';
-        }
-        return 'bg-gray-200';
-    }
-
 }
