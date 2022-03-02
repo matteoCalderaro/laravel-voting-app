@@ -192,7 +192,7 @@
         </div>
         <div class="hidden md:flex items-center space-x-3">
             <div class="bg-white font-semibold text-center rounded-xl px-3 py-2">
-                <div class="text-xl leading-snug">{{ $votesCount }}</div>
+                <div class="text-xl leading-snug @if($hasVoted) text-blue @endif">{{ $votesCount }}</div>
                 <div class="text-gray-400 text-xs leading-none">Votes</div>
             </div>
             <button

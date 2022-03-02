@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Matteo',
-            'email'=> 'matteocalderaro@gmail.com'
+            'email'=> 'm@m',
         ]);
 
         User::factory(19)->create();
@@ -38,6 +38,8 @@ class DatabaseSeeder extends Seeder
         Status::factory()->create(['name'=>'closed', 'classes'=>'bg-red text-white']);
 
         Idea::factory(100)->create();
+
+
 
         // Generate unique votes. Ensure idea_id and user_id are unique for each row.
         foreach (range(1,20) as $user_id){
