@@ -16,6 +16,7 @@ class StatusFilters extends Component
     public function mount(){
 
         $this->statusCount = Status::getCount();
+        $this->status = request()->status ?? 'All';
 
         // dd($this->statusCount);
 
