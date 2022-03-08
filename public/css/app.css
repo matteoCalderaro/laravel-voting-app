@@ -738,6 +738,12 @@ select {
 .mt-16 {
   margin-top: 4rem;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-7 {
+  margin-top: 1.75rem;
+}
 .block {
   display: block;
 }
@@ -1136,6 +1142,9 @@ select {
 }
 .bg-matteo\/25 {
   background-color: rgb(187 247 208 / 0.25);
+}
+.bg-black\/75 {
+  background-color: rgb(0 0 0 / 0.75);
 }
 .fill-current {
   fill: curentColor;
