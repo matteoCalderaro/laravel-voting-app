@@ -28,7 +28,6 @@ class EditIdea extends Component
     }
 
     public function updateIdea(){
-
         if(auth()->guest() || auth()->user()->cannot('update',$this->idea)){
             abort(403);
         }
