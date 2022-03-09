@@ -20,6 +20,11 @@
         <livewire:delete-idea :idea="$idea" />
     @endcan
 
+    <livewire:mark-idea-as-spam :idea="$idea" />
+
+    <livewire:mark-idea-as-not-spam :idea="$idea" />
+
+
     <div class="comments-container relative space-y-6 md:ml-22 my-8 pt-4 mt-1">
         @foreach (range(1,3) as $comment)
         <div class="comment-container bg-white rounded-xl flex mt-4">
