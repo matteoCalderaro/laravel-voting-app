@@ -5,6 +5,11 @@
     x-show="isOpen"
     @keydown.escape.window="isOpen = false"
     @custom-show-edit-modal.window="isOpen = true"
+    x-init="
+		window.livewire.on('ideaWasUpdated',()=>{
+			isOpen = false
+		})
+	"
     class="fixed z-10 inset-0 overflow-y-auto"
     aria-labelledby="modal-title"
     role="dialog"
@@ -33,7 +38,7 @@
 			<div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
 				<h3 class="text-center text-lg font-medium text-gray-900">Edit Idea</h3>
 				<p class="text-xs text-center leading-5 text-gray-500 mt-4 px-6">You have one hour to edit your idea from the time you created it.</p>
-				<form wire:submit.prevent="createIdea" action="#" method="post" class="space-y-4 px-4 py-6">
+				<form wire:submit.prevent="updateIdea" action="#" method="post" class="space-y-4 px-4 py-6">
 					<div>
 						<input wire:model.defer="title" type="text" class="w-full text-sm bg-gray-100 rounded-xl border-none placeholder-gray-900 px-4 py-2"
 						placeholder="Your Idea" required>
@@ -47,8 +52,9 @@
 							name="category_add"
 							id="category_add"
 							class="w-full text-sm rounded-xl border-none bg-gray-100 px-4   py-2">
-
-									<option value="1">CAtegory 1</option>
+                                @foreach ($categories as $category)
+								    <option value="{{ $category->id }}">{{$category->name}}</option>
+                                @endforeach
 						</select>
 					</div>
 					@error('category')
@@ -79,7 +85,7 @@
 							class="flex items-center justify-center w-1/2 h-11 text-xs bg-blue font-semibold rounded-xl border
 							border-blue hover:bg-blue-hover transition duration-150 ease-in px-6 py-3 text-white"
 							>
-							<span class="ml-1">Submit</span>
+							<span class="ml-1">Update</span>
 						</button>
 					</div>
 				</form>
