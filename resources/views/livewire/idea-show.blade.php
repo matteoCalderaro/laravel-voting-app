@@ -40,8 +40,18 @@
                                     @click.away="isOpen = false"
                                     class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3 ml-8
                                     md:ml-8 top-8 md:top-6 right-0 md:left-0 z-10">
-                                    <li><a href="#" class="hover:bg-gray-100 transition
-                                    duration-150 block ease-in px-5 py-3">Edit Idea</a></li>
+                                    <li>
+                                        <a
+                                            href="#"
+                                            @click="
+                                                isOpen = false
+                                                $dispatch('custom-show-edit-modal')
+                                            "
+                                            class="hover:bg-gray-100 transition duration-150 block ease-in px-5 py-3"
+                                        >
+                                           Edit Idea
+                                        </a>
+                                    </li>
                                     <li><a href="#" class="hover:bg-gray-100 transition
                                     duration-150 block ease-in px-5 py-3">Delete Idea</a></li>
                                     <li><a href="#" class="hover:bg-gray-100 transition
