@@ -19,6 +19,7 @@
                     @endif
                     <div>{{ $comment->created_at->diffForHumans()}}</div>
                 </div>
+                @auth
                 <div
                     x-data="{ isOpen : false }"
                     class="flex items-center space-x-2">
@@ -32,8 +33,23 @@
                             x-show="isOpen" x-transition.duration.500ms
                             x-cloak
                             @click.away="isOpen = false"
-                            class="absolute w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3
+                            class="absolute z-20 w-44 text-left font-semibold bg-white shadow-dialog rounded-xl py-3
                             ml-8 md:ml-8 top-8 md:top-6 right-0 md:left-0">
+                            @can('update',$comment)
+                                <li>
+                                    <a
+                                        href="#"
+                                        @click.prevent="
+                                            isOpen = false
+                                            Livewire.emit('setEditComment', {{ $comment->id }})
+                                            {{-- $dispatch('custom-show-edit-modal') --}}
+                                        "
+                                        class="hover:bg-gray-100 transition duration-150 block ease-in px-5 py-3"
+                                    >
+                                        Edit Comment
+                                    </a>
+                                </li>
+                            @endcan
                             <li><a href="#" class="hover:bg-gray-100 transition
                             duration-150 block ease-in px-5 py-3">Mark as Spam</a></li>
                             <li><a href="#" class="hover:bg-gray-100 transition
@@ -41,6 +57,7 @@
                         </ul>
                     </div>
                 </div>
+                @endauth
             </div>
         </div>
     </div>
