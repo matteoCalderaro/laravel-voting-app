@@ -92,8 +92,8 @@ class IdeasIndex extends Component
                 ->withCount('votes')
                 ->withCount('comments')
                 ->orderBy('id', 'desc')
-                // ->simplePaginate(10)
-                ->simplePaginate(Idea::PAGINATION_COUNT),
+                ->simplePaginate()
+                ->withQueryString(),
             'categories'=> $categories,
         ]);
     }
