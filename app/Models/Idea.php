@@ -4,6 +4,7 @@ namespace App\Models;
 
 
 
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,6 +42,9 @@ class Idea extends Model
     public function votes(){
         return $this->belongsToMany(User::class, 'votes');
     }
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 
     public function isVotedByUser(?User $user){
 
@@ -65,7 +69,5 @@ class Idea extends Model
             ->first()
             ->delete();
     }
-
-
 
 }

@@ -4,7 +4,7 @@
 
 [x-cloak] { display: none !important; }
 
-/* the vertical line to the left of the comments */
+/* vertical line to the left of the comments */
 .comments-container::before {
     position: absolute;
     display: block;
@@ -13,10 +13,10 @@
     content: "";
     width: 3px;
     height: 100%;
-    background: #d1d4d6;
-    /* opacity: .07; */
+    background: #edf0f5;
 }
 
+/* horizontal line to the left of the comments */
 .comment-container::before {
     position: absolute;
     display: block;
@@ -24,11 +24,11 @@
     content: "";
     width: 23px;
     height: 3px;
-    background: #d1d4d6;
+    background: #edf0f5;
     left: -40px;
-    /* opacity: .07; */
 }
 
+/* remove last vertical line */
 .comment-container:last-child::after {
     position: absolute;
     display: block;
@@ -37,8 +37,9 @@
     content: "";
     width: 3px;
     height: calc(100% - 60px);
-    background: theme('colors.gray-background');
+    background: #d3d3d3;
 }
+
 
 .is-admin::before {
     position: absolute;
@@ -64,5 +65,5 @@
 
 
 body{
-    background: linear-gradient(to right, #d3cce3, #e9e4f0)
+    background: #d3d3d3;
 }
