@@ -10,8 +10,6 @@
                 />
             @endforeach
 
-
-
         </div> {{-- end comments-container --}}
         <div class="my-8 ml-22">
             {{ $comments->onEachSide(1)->links() }}

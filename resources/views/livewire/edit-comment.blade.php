@@ -51,7 +51,7 @@ aria-modal="true"
                     x-ref="editComment"
                     wire:model.defer="body"
                     name="idea"
-                    id="idea" cols="30" rows="4"
+                    cols="30" rows="4"
                     class="w-full border-none bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2"
                     placeholder="Edit your comment here" required></textarea>
                 @error('body')
