@@ -53,7 +53,7 @@ aria-modal="true"
                     name="idea"
                     id="idea" cols="30" rows="4"
                     class="w-full border-none bg-gray-100 rounded-xl placeholder-gray-900 text-sm px-4 py-2"
-                    placeholder="Edit the comment" required></textarea>
+                    placeholder="Edit your comment here" required></textarea>
                 @error('body')
                     <p class="text-red text-xs mt-1">{{ $message }}</p>
                 @enderror

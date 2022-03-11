@@ -23,7 +23,7 @@ class IdeaComments extends Component
 
     public function commentWasDeleted(){
         $this->idea->refresh();
-        // $this->goToPage(1);
+        $this->goToPage(1);
     }
 
     public function mount(Idea $idea){
