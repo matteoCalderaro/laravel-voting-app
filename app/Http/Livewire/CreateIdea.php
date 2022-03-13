@@ -8,10 +8,11 @@ use App\Models\Vote;
 use Livewire\Component;
 use App\Models\Category;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Livewire\Traits\WithAuthRedirects;
 
 class CreateIdea extends Component
 {
-
+    use WithAuthRedirects;
     public $title;
     public $category = 1;
     public $description;
